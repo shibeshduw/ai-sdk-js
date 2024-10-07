@@ -42,7 +42,7 @@ jobs:
           repository: sap/cloud-sdk-js
           path: cloud-sdk-js
       - name: Run License Check
-        run: node --loader ts-node/esm .\scripts\check-licenses.ts
+        run: node --loader ts-node/esm scripts/check-licenses.ts
 
   dependabot:
     runs-on: ubuntu-latest
