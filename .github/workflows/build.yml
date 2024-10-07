@@ -36,6 +36,13 @@ jobs:
         run: pnpm check:public-api
       - name: Check dependencies
         run: pnpm check:deps
+      - name: Checkout cloud-sdk-js for License Check
+        uses: actions/checkout@v4
+        with:
+          repository: sap/cloud-sdk-js
+          path: cloud-sdk-js
+      - name: Run License Check
+        run: node --loader ts-node/esm .\scripts\check-licenses.ts
 
   dependabot:
     runs-on: ubuntu-latest
