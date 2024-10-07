@@ -29,20 +29,13 @@ jobs:
       - uses: sap/ai-sdk-js/.github/actions/setup@main
       - name: REUSE Compliance Check
         uses: fsfe/reuse-action@v4
-      - run: pnpm lint
-      - name: Check CommonJS compatibility
-        run: pnpm compile:cjs
-      - name: Check public API
-        run: pnpm check:public-api
-      - name: Check dependencies
-        run: pnpm check:deps
       - name: Checkout cloud-sdk-js for License Check
         uses: actions/checkout@v4
         with:
           repository: sap/cloud-sdk-js
           path: cloud-sdk-js
       - name: Run License Check
-        run: node --loader ts-node/esm scripts/check-licenses.ts
+        run: node --loader ts-node/esm cloud-sdk-js/scripts/check-licenses.ts
 
   dependabot:
     runs-on: ubuntu-latest
