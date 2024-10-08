@@ -3,6 +3,5 @@ description: 'Checks if the licenses of the dependencies are allowed.'
 runs:
   using: 'composite'
   steps:
-    - uses: shibeshduw/ai-sdk-js/.github/actions/setup@main
     - run: pnpm check:license
       shell: bash
