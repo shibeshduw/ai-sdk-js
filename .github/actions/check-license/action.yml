@@ -1,5 +1,8 @@
 name: 'Check License'
 description: 'Checks if the licenses of the dependencies are allowed.'
 runs:
-  using: 'node20'
-  main: 'index.js'
+  using: 'composite'
+  steps:
+    - uses: shibeshduw/ai-sdk-js/.github/actions/setup@main
+    - run: pnpm check:license
+      shell: bash

@@ -29,7 +29,8 @@
     "smoke-tests": "pnpm -F=@sap-ai-sdk/smoke-tests",
     "schema-tests": "pnpm -F=@sap-ai-sdk/schema-tests",
     "check:public-api": "pnpm -r check:public-api",
-    "check:deps": "pnpm -r -F !./tests/smoke-tests -F !./tests/schema-tests exec depcheck --ignores=\"nock,@jest/globals\" --quiet"
+    "check:deps": "pnpm -r -F !./tests/smoke-tests -F !./tests/schema-tests exec depcheck --ignores=\"nock,@jest/globals\" --quiet",
+    "check:license": "pnpm node --loader ts-node/esm ./scripts/check-licenses.ts"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.9",
